@@ -10,6 +10,14 @@ const NewCollection = () => {
 
         <div className=" mt-20 mb-10 ml-5 mr-5">
 
+
+
+              <div>
+				<p className=" font-serif text-center  text-5xl mb-5">New Collections </p>
+			  </div>
+
+
+
             <div className=" flex-col md:flex-row lg:flex-row flex justify-center items-center">
 
             <div className="max-w-xs hover:border-[1px] border-black  shadow-md h-[500px] w-[500px] bg-white text-black">
