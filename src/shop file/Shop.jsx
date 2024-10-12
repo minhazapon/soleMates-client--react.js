@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import ShopList from "./ShopList";
+import ShopPagination from "./ShopPagination";
 
 
 const Shop = () => {
@@ -7,12 +9,20 @@ const Shop = () => {
 
     const [shop, setShop] = useState([])
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postePerPage, setPostPerPage] = useState(6);
+
 
     useEffect( () =>{     
         fetch('http://localhost:5000/shopData')
         .then( res => res.json())
         .then( data => setShop(data) )
     } , [])
+
+
+    const lastPostIndex = currentPage * postePerPage 
+    const fastPostIndex = lastPostIndex - postePerPage
+    const currentPost = shop.slice(fastPostIndex, lastPostIndex)
 
 
 
@@ -33,8 +43,12 @@ const Shop = () => {
             </div>
 
             <div className=" mt-10 mb-10 ml-10 mr-10">
-                <div>
-
+                 <div>
+                   <p className=" font-serif text-center text-gray-500 mb-10"> Shop Items</p>
+                 </div>
+                 <ShopList shop={currentPost} ></ShopList>
+                <div className=" flex justify-center">
+                     <ShopPagination totalPost={shop.length} postePerPage={postePerPage} setCurrentPage={setCurrentPage} ></ShopPagination>
                 </div>
             </div>
             
