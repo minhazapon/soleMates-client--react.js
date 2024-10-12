@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -16,7 +17,13 @@ const Fetured = () => {
               <div className="card-body">
                 <h2 className="card-title font-serif ">Featured!</h2>
                 <div className="card-actions justify-end">
-                  <button className="btn  mt-48 ">Shop Now</button>
+
+                  <Link to='/shop' >
+                     
+                     <button className="btn  mt-48 ">Shop Now</button>
+                  
+                  </Link>
+                 
                 </div>
               </div>
             </div>
@@ -33,7 +40,12 @@ const Fetured = () => {
               <div className="card-body">
                 <h2 className="card-title font-serif ">newCollection!</h2>
                 <div className="card-actions justify-end">
-                  <button className="btn  mt-48  ">Shop Now</button>
+                <Link to='/shop' >
+                     
+                     <button className="btn  mt-48 ">Shop Now</button>
+                  
+                  </Link>
+                 
                 </div>
               </div>
             </div>

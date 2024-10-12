@@ -1,6 +1,8 @@
 
 //
 
+import { Link } from "react-router-dom";
+
 const Banner = () => {
 
 
@@ -21,7 +23,11 @@ const Banner = () => {
               <p className=" mt-5 font-serif text-xl text-white">Search The Shoes And Find Your pieces</p>
 
               <div className=" flex justify-center mt-5">
+
+                <Link to='/shop' >
                 <button className=" hover:border-[1px] border-[#22fcdf]  h-[50px] w-[300px] text-3xl  text-white font-serif">Shop Now</button>
+                </Link>
+                
               </div>
             
             </div>

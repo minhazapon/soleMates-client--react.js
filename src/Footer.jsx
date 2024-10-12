@@ -1,8 +1,47 @@
+import Swal from "sweetalert2";
 
 
 
 
 const Footer = () => {
+
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "e87151e8-7baa-471d-b58a-0bd71fe1cd67");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      Swal.fire({
+        title: 'Join Done!',
+        text: 'Do you want to continue',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+      event.target.reset();
+    } else {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
+      setResult(data.message);
+    }
+  };
+
+
+
+
     return (
         <div className=" ">
 
@@ -83,7 +122,7 @@ const Footer = () => {
 
 
             <div>
-            <form>
+            <form onSubmit={onSubmit} >
                 <h6 className="footer-title">Newsletter</h6>
                 <fieldset className="form-control w-80">
                   <label className="label">
@@ -93,8 +132,10 @@ const Footer = () => {
                     <input
                       type="text"
                       placeholder="Join Us"
+                      name="name"
+                      required
                       className="input input-bordered join-item" />
-                    <button className="btn  join-item">Subscribe</button>
+                    <input className=" btn join-item font-thin " type="submit" value="join" />
                   </div>
                 </fieldset>
               </form>

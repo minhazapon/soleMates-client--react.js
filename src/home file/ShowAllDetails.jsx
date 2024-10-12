@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -17,7 +18,9 @@ const ShowAllDetails = ({query}) => {
             <h2 className=" text-xl tracking-wide font-serif"> {title} </h2>
             <div className=" flex justify-between items-center ">
              <p  className="  text-xl text-gray-500 font-thin "> {price} </p>
+             <Link to='/shop' >
              <img className="  hover:border-[1px] border-black p-2  h-[40px]" src="https://cdn-icons-png.flaticon.com/128/1124/1124233.png" alt="" />
+             </Link>     
             </div>
 		    </div>
             </div>

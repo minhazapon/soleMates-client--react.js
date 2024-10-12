@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -38,7 +39,11 @@ const NewSale = () => {
                 <h1 className="mb-5 text-9xl font-bold text-white font-serif">SALE</h1>
                 <p className=" text-white ">20% Off all Hoodies</p>
                 <div>
-                <button className=" mt-5 border-[1px] border-[#22fcdf]  h-[50px] w-[300px] text-3xl  text-white font-serif">Shop Now</button>
+
+                  <Link to='/shop' >
+                  <button className=" mt-5 border-[1px] border-[#22fcdf]  h-[50px] w-[300px] text-3xl  text-white font-serif">Shop Now</button>
+                  </Link>
+               
                 </div>
                 </div> 
                 </div>
