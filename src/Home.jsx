@@ -4,6 +4,7 @@ import Fetured from "./home file/Fetured";
 import Mark from "./home file/Mark";
 import NewCollection from "./home file/NewCollection";
 import NewSale from "./home file/NewSale";
+import Products from "./home file/Products";
 import ProductsNumbers from "./home file/ProductsNumbers";
 import Shoes from "./home file/Shoes";
 import Street from "./home file/Street";
@@ -16,6 +17,7 @@ const Home = () => {
 
             <Banner></Banner>
             <Fetured></Fetured>
+            <Products></Products>
             <Shoes></Shoes>
             <NewCollection></NewCollection>
             <ProductsNumbers></ProductsNumbers>
