@@ -1,9 +1,22 @@
+import { useQuery } from "@tanstack/react-query";
+import ReadDetails from "./ReadDetails";
 
 
 
 const Read = () => {
 
+     const { data: query } = useQuery({
 
+          queryKey: ['query'],
+          queryFn: async () =>{
+
+              const res = await fetch('http://localhost:5000/addData')
+              return res.json()
+
+          }
+
+
+     })
 
 
     return (
@@ -22,16 +35,20 @@ const Read = () => {
               </div>
             </div>
 
+            <div>
+               <p className="  font-thin text-xl text-center mt-5 mb-5 text-gray-500 ">Your Products</p>
+            </div>
+
             {/* /////////////////////////////////////////////// */}
            
 
-            <div>
-                <div>
+            <div className=" flex justify-center mt-10">
+                <div className=" grid  md:grid-cols-3 ">
 
 
                     {
 
-                       
+                       query?.map( query => <ReadDetails query={query} ></ReadDetails> )
 
                     }
 

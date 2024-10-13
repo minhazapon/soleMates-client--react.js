@@ -5,13 +5,7 @@ import ShowAllDetails from "./ShowAllDetails";
 
 const Showall = () => {
 
-    // const { data: query } = useQuery({
-    //     queryKey: ['query'],
-    //     queryFn: async () =>{
-    //       const res = await fetch('http://localhost:5000/bulletData')
-    //       return res.json()
-    //     }
-    // })
+   
 
 
     const { data: query } = useQuery({
