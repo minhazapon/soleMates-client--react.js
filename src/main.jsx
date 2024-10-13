@@ -18,6 +18,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import Shop from './shop file/Shop';
+import About from './page file/About';
 
 
 // Create a client
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element:  <Shop></Shop> ,
+      },
+      {
+        path: "/about",
+        element: <About></About> ,
       },
     ],
   },

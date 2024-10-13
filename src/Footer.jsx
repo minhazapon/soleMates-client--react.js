@@ -117,7 +117,7 @@ const Footer = () => {
 
 
 
-          <div className=" flex justify-center items-center gap-36 mt-10 mb-10">
+          <div className=" flex-col md:flex-row lg:flex-row flex justify-center items-center gap-36 mt-10 mb-10">
 
 
 

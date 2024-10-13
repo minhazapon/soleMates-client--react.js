@@ -17,7 +17,7 @@ const Nav = () => {
 
        
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/' >HOME</NavLink></li>
-       <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/page' >PAGE</NavLink></li>
+       <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/about' >PAGE</NavLink></li>
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/shop' >SHOP</NavLink></li>
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/blog' >BLOGS</NavLink></li>
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/port' >PORTFOLIO</NavLink></li>

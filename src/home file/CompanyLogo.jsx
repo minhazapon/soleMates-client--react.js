@@ -48,7 +48,7 @@ const CompanyLogo = () => {
                <div className=" border-[1px] border-gray-200 ">
                  <img src="https://dunker.qodeinteractive.com/wp-content/uploads/2022/12/h4-clients-4.png" alt="" />
                </div>
-
+ 
                </div>
                <div className=" hover:border-[1px] border-black " >
                  
