@@ -1,7 +1,7 @@
 ////https://w0.peakpx.com/wallpaper/316/849/HD-wallpaper-yeezy-boost-yeezy-boost-stock-adidas-yeezy-boost.jpg
 
-import { NavLink } from 'react-router-dom';
-import logo from './image/logo.jpg'
+import { Link, NavLink } from 'react-router-dom';
+
 
 const Nav = () => {
 
@@ -19,8 +19,6 @@ const Nav = () => {
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/' >HOME</NavLink></li>
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/about' >PAGE</NavLink></li>
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/shop' >SHOP</NavLink></li>
-       <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/blog' >BLOGS</NavLink></li>
-       <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/port' >PORTFOLIO</NavLink></li>
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/add' >Add</NavLink></li>
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/read' >ADDPRODUCTS</NavLink></li>
 
@@ -90,12 +88,20 @@ const Nav = () => {
 
 
     <div>
-       
-        <a className="btn font-serif bg-white ">Run  
+
+       <Link to='/login' >
+         
+
+           <a className="btn font-serif bg-white ">Run  
 
         <img className=' h-[30px] ' src="https://cdn-icons-gif.flaticon.com/10827/10827027.gif" alt="" />
 
         </a>
+       
+       
+       </Link>
+       
+      
     </div>
 
 

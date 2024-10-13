@@ -1,10 +1,66 @@
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
 const ReadDetails = ({query}) => {
     
 
-    const {name, brand, price, category, photourl, description} = query
+    const { _id, name, brand, price, category, photourl, description} = query
+
+
+    const handleDelete = delete_id =>{
+          
+        console.log(_id)
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+           
+            fetch(`http://localhost:5000/addData/${_id}`,{
+
+                method: 'DELETE',
+
+            })
+            .then( res => res.json())
+            .then( data => {
+               
+                console.log(data)
+
+                if(data.deletedCount > 0){
+
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
+ 
+
+                }
+
+
+            } )
+
+
+
+
+            }
+          });
+
+
+
+
+    }
+
+
+
 
     return (
         <div>
@@ -22,12 +78,16 @@ const ReadDetails = ({query}) => {
              <div>
              </div>
             </div>
-            <div>
+            <div className=" flex items-center gap-5">
             <a href="#_" class="relative inline-block px-4 py-2 font-medium group">
             <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
             <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
             <span class="relative text-black font-serif group-hover:text-white">Buy Now</span>
             </a>
+             <button onClick={ ()=> handleDelete(query._id) } ><img className=" h-[40px]" src="https://cdn-icons-png.flaticon.com/128/4041/4041307.png" alt="" /></button>
+             <Link to={`/update/${_id}`} >
+             <button><img className=" h-[40px]" src="https://cdn-icons-png.flaticon.com/128/1688/1688988.png" alt="" /></button>
+             </Link>
             </div>
 		    </div>
             </div>

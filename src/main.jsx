@@ -21,6 +21,9 @@ import Shop from './shop file/Shop';
 import About from './page file/About';
 import Add from './crud file/Add';
 import Read from './crud file/Read';
+import Update from './crud file/Update';
+import Login from './firebase and login/Login';
+import SignUp from './firebase and login/SignUp';
 
 
 // Create a client
@@ -52,6 +55,19 @@ const router = createBrowserRouter([
       {
         path: "/read",
         element:  <Read></Read> ,
+      },
+      {
+        path: "/login",
+        element:  <Login></Login> ,
+      },
+      {
+        path: "/signUp",
+        element:  <SignUp></SignUp> ,
+      },
+      {
+        path: "/update/:id",
+        element:  <Update></Update> ,
+        loader: ({params}) => fetch(`http://localhost:5000/addData/${params.id}`)
       },
     ],
   },
