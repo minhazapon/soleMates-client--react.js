@@ -1,9 +1,21 @@
-////https://w0.peakpx.com/wallpaper/316/849/HD-wallpaper-yeezy-boost-yeezy-boost-stock-adidas-yeezy-boost.jpg
 
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { fireContext } from './firebase and login/AuthContext';
 
 
 const Nav = () => {
+
+  const {user, logOut} = useContext(fireContext)
+
+
+  const handleOut = () => {
+    logOut()
+    .then(() => console.log('logOut successfully'))
+    .catch( error => 
+      console.error(error)
+    )
+   }
 
     
 
@@ -18,9 +30,12 @@ const Nav = () => {
        
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/' >HOME</NavLink></li>
        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/about' >PAGE</NavLink></li>
-       <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/shop' >SHOP</NavLink></li>
-       <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/add' >Add</NavLink></li>
-       <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/read' >ADDPRODUCTS</NavLink></li>
+      { user && <>
+        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/shop' >SHOP</NavLink></li>
+        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/add' >Add</NavLink></li>
+        <li className='  hover:border-[1px] border-[#22fcdf] rounded-xl  font-serif' ><NavLink to='/read' >ADDPRODUCTS</NavLink></li>
+        
+      </> }
 
        </div>
 
@@ -89,17 +104,29 @@ const Nav = () => {
 
     <div>
 
-       <Link to='/login' >
-         
 
-           <a className="btn font-serif bg-white ">Run  
+    { user ? <>
+    
+    <a href="#_" onClick={handleOut} class="relative inline-block text-lg group">
+    <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+    <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+    <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease">SignOut</span>
+    <span class="relative">SignOut</span>
+    </span>
+    <span class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
+    </a>
+    
+  </>:
 
-        <img className=' h-[30px] ' src="https://cdn-icons-gif.flaticon.com/10827/10827027.gif" alt="" />
+<Link to='/login' >
+<a className="btn font-serif bg-white ">Run  
+<img className=' h-[30px] ' src="https://cdn-icons-gif.flaticon.com/10827/10827027.gif" alt="" />
+</a>
+</Link>
 
-        </a>
-       
-       
-       </Link>
+  }
+
+      
        
       
     </div>

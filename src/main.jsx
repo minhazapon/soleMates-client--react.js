@@ -25,6 +25,8 @@ import Update from './crud file/Update';
 import Login from './firebase and login/Login';
 import SignUp from './firebase and login/SignUp';
 import Buy from './buy file/Buy';
+import AuthContext from './firebase and login/AuthContext';
+import PrivateRoute from './firebase and login/PrivateRoute';
 
 
 // Create a client
@@ -43,19 +45,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/shop",
-        element:  <Shop></Shop> ,
+        element: <PrivateRoute><Shop></Shop></PrivateRoute>   ,
       },
       {
         path: "/about",
-        element: <About></About> ,
+        element:  <PrivateRoute><About></About></PrivateRoute> ,
       },
       {
         path: "/add",
-        element:  <Add></Add> ,
+        element:   <PrivateRoute><Add></Add></PrivateRoute> ,
       },
       {
         path: "/read",
-        element:  <Read></Read> ,
+        element:   <PrivateRoute><Read></Read></PrivateRoute> ,
       },
       {
         path: "/login",
@@ -67,11 +69,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/buy",
-        element: <Buy></Buy> ,
+        element:  <PrivateRoute><Buy></Buy></PrivateRoute> ,
       },
       {
         path: "/update/:id",
-        element:  <Update></Update> ,
+        element:   <PrivateRoute><Update></Update></PrivateRoute> ,
         loader: ({params}) => fetch(`http://localhost:5000/addData/${params.id}`)
       },
     ],
@@ -81,8 +83,10 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 
-      <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>\
+        <AuthContext>
+        <RouterProvider router={router} />
+        </AuthContext>
       </QueryClientProvider>
     
   </StrictMode>,

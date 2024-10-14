@@ -1,6 +1,52 @@
+import { useContext } from "react";
+import { fireContext } from "./AuthContext";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
+
+  const {createUser} = useContext(fireContext)
+  const navigate = useNavigate()
+
+
+  const handleUp = e =>{
+
+    e.preventDefault();
+    const email = e.target.email.value
+    const password = e.target.password.value
+    console.log(email, password)
+
+
+    createUser(email, password)
+    .then(result => {
+     console.log(result.user)
+         e.target.reset();
+         navigate('/')
+         if(result){
+              
+          Swal.fire({
+            title: 'signUp Done!',
+            text: 'Do you want to continue',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+
+         }
+     })
+     .catch(error => {
+       console.error(error)
+     })
+    }
+
+
+
+
+
+
+
+
+
     return (
         <div>
 
@@ -26,7 +72,7 @@ const SignUp = () => {
 <div className="flex flex-col w-full max-w-md p-12 space-y-4 text-center bg-black border-[1px]  border-[#00CCDD] text-gray-100">
     <h1 className="text-3xl font-semibold">Sign Up to your account</h1>
     {/* <a className="text-sm text-gray-400" href="/">Or start your free trial</a> */}
-    <form  className="space-y-4">
+    <form  onSubmit={handleUp} className="space-y-4">
         <div className="flex flex-col">
             <label htmlFor="email" className="sr-only">Email address</label>
             <input id="email" type="email" name="email" placeholder="Email address" className="rounded-t-md border-gray-600 bg-black text-gray-100 focus:ring-violet-400 focus:border-violet-400 focus:ring-2" />
