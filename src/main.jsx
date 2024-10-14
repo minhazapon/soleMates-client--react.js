@@ -24,6 +24,7 @@ import Read from './crud file/Read';
 import Update from './crud file/Update';
 import Login from './firebase and login/Login';
 import SignUp from './firebase and login/SignUp';
+import Buy from './buy file/Buy';
 
 
 // Create a client
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element:  <SignUp></SignUp> ,
+      },
+      {
+        path: "/buy",
+        element: <Buy></Buy> ,
       },
       {
         path: "/update/:id",
