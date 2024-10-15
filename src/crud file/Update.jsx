@@ -26,7 +26,7 @@ const Update = () => {
         console.log(UpdateUser)
   
   
-        fetch(`http://localhost:5000/addData/${_id}`,{
+        fetch(`https://sole-mates-server-h2pqomdj7-minhazapons-projects.vercel.app/addData/${_id}`,{
   
          method: 'PUT',
          headers:{

@@ -18,7 +18,7 @@ const Add = () => {
       const addUser = { name, brand, price, category, photourl, description }
       console.log(addUser)
 
-      fetch('http://localhost:5000/addData', {
+      fetch('https://sole-mates-server-h2pqomdj7-minhazapons-projects.vercel.app/addData', {
        
         method: 'POST',
         headers:{

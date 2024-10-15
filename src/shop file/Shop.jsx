@@ -14,7 +14,7 @@ const Shop = () => {
 
 
     useEffect( () =>{     
-        fetch('http://localhost:5000/shopData')
+        fetch('https://sole-mates-server-h2pqomdj7-minhazapons-projects.vercel.app/shopData')
         .then( res => res.json())
         .then( data => setShop(data) )
     } , [])
