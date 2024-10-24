@@ -26,7 +26,7 @@ const Update = () => {
         console.log(UpdateUser)
   
   
-        fetch(`https://sole-mates-server-h2pqomdj7-minhazapons-projects.vercel.app/addData/${_id}`,{
+        fetch(`http://localhost:5000/addData/${_id}`,{
   
          method: 'PUT',
          headers:{
@@ -41,7 +41,7 @@ const Update = () => {
         .then( data => {
          console.log(data)
   
-         if(data.modifiedCount > 0){
+         if(data){
   
           Swal.fire({
               title: "Updated Done!",

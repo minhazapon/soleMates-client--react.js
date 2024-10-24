@@ -18,7 +18,7 @@ const Add = () => {
       const addUser = { name, brand, price, category, photourl, description }
       console.log(addUser)
 
-      fetch('https://sole-mates-server-h2pqomdj7-minhazapons-projects.vercel.app/addData', {
+      fetch('http://localhost:5000/addData', {
        
         method: 'POST',
         headers:{
@@ -34,9 +34,7 @@ const Add = () => {
 
            console.log(data)
 
-           if(data.insertedID){
-             
-            alert('data added')
+           if(data.insertedId){
 
             Swal.fire({
                 title: 'Successfully added!',
@@ -63,7 +61,7 @@ const Add = () => {
             <div
               className="hero min-h-screen"
               style={{
-                backgroundImage: "url( https://img.freepik.com/free-vector/happy-people-shopping-online_74855-5865.jpg?t=st=1728811341~exp=1728814941~hmac=0d4820298d669e789b4ffd0ae684ce573d6400afc79f9bbfb5c654411c8d09b0&w=740 )",
+                backgroundImage: "url( https://img.freepik.com/premium-vector/online-shopping-concept-young-women-with-shopping-cart-buying-products-mobile-application-st_954457-542.jpg?w=740 )",
               }}>
               <div className="hero-overlay bg-opacity-60"></div>
               <div className="hero-content text-neutral-content text-center">

@@ -83,7 +83,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 
-      <QueryClientProvider client={queryClient}>\
+      <QueryClientProvider client={queryClient}>
         <AuthContext>
         <RouterProvider router={router} />
         </AuthContext>

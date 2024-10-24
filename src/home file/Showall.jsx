@@ -13,7 +13,7 @@ const Showall = () => {
        queryKey: ['query'],
        queryFn: async () =>{
 
-           const res = await fetch('https://sole-mates-server-h2pqomdj7-minhazapons-projects.vercel.app/featuredData')
+           const res = await fetch('http://localhost:5000/featuredData')
            return res.json()
 
        }

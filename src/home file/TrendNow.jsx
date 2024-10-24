@@ -11,7 +11,7 @@ const TrendNow = () => {
 
     useEffect( () =>{
 
-        fetch('https://sole-mates-server-h2pqomdj7-minhazapons-projects.vercel.app/trendingData')
+        fetch('http://localhost:5000/trendingData')
         .then( res => res.json())
         .then( data => setTrend(data) )
 

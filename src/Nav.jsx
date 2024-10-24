@@ -94,8 +94,10 @@ const Nav = () => {
      
     <div className='    flex items-center gap-2 '>
     
-    <img className=' h-[30px]' src="https://cdn-icons-png.flaticon.com/128/10469/10469570.png" alt="" />
-    <img className=' h-[30px]' src="https://cdn-icons-png.flaticon.com/128/1121/1121882.png" alt="" />    
+     <Link to='/shop' >
+     <img className=' h-[30px]' src="https://cdn-icons-png.flaticon.com/128/1121/1121882.png" alt="" />    
+     </Link>
+   
     
     </div>
 

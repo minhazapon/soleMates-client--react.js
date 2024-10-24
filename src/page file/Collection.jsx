@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -16,11 +17,17 @@ const Collection = () => {
                  <p className=" font-bold font-serif text-6xl mt-5 ">The Ultimate<br></br> Street Vibe</p>
                  <p className=" font-serif text-gray-500 mt-5 ">There are several major companies in the<br></br> shoe industry, with Nike being the dominant player.<br></br>  Other notable companies include <br></br> Reebok, Fila, and Adidas. </p>
                  <div className=" mt-5">
+
+                  <Link to='/shop' >
+
                   <a href="#_" class="relative inline-block px-4 py-2 font-medium group">
                   <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                   <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
                   <span class="relative text-black group-hover:text-white font-serif ">Shop</span>
-                 </a>
+                  </a>
+                  
+                  </Link>
+                 
                  </div>
                </div>
                <div>
@@ -44,11 +51,15 @@ const Collection = () => {
                  <p className=" font-bold font-serif text-6xl mt-5 ">Street Vibe</p>
                  <p className=" font-serif text-gray-500 mt-5 ">There are several major companies in the<br></br> shoe industry, with Nike being the dominant player.<br></br>  Other notable companies include <br></br> Reebok, Fila, and Adidas. </p>
                  <div className=" mt-5">
-                  <a href="#_" class="relative inline-block px-4 py-2 font-medium group">
-                  <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                  <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
-                  <span class="relative text-black group-hover:text-white font-serif ">Shop</span>
+                 <Link to='/shop' >
+
+                 <a href="#_" class="relative inline-block px-4 py-2 font-medium group">
+                 <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                 <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                 <span class="relative text-black group-hover:text-white font-serif ">Shop</span>
                  </a>
+
+                 </Link>
                  </div>
                </div>
                

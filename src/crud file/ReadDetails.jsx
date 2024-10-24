@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 
 
-const ReadDetails = ({query}) => {
+const ReadDetails = ({query, shoesDelete, setShoesDelete}) => {
     
 
     const { _id, name, brand, price, category, photourl, description} = query
@@ -24,7 +24,7 @@ const ReadDetails = ({query}) => {
           }).then((result) => {
             if (result.isConfirmed) {
            
-            fetch(`https://sole-mates-server-h2pqomdj7-minhazapons-projects.vercel.app/addData/${_id}`,{
+            fetch(`http://localhost:5000/addData/${_id}`,{
 
                 method: 'DELETE',
 
@@ -41,7 +41,9 @@ const ReadDetails = ({query}) => {
                         text: "Your file has been deleted.",
                         icon: "success"
                       });
- 
+                    
+                    const remaining = shoesDelete.filter(sd => sd._id !== _id )  
+                    setShoesDelete(remaining)
 
                 }
 

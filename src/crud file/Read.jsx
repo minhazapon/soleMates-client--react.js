@@ -1,23 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
 import ReadDetails from "./ReadDetails";
+import { useState } from "react";
 
 
 
 const Read = () => {
 
      const { data: query } = useQuery({
-
           queryKey: ['query'],
           queryFn: async () =>{
-
-              const res = await fetch('https://sole-mates-server-h2pqomdj7-minhazapons-projects.vercel.app/addData')
+              const res = await fetch('http://localhost:5000/addData')
               return res.json()
-
           }
-
-
      })
+     
 
+     const [shoesDelete, setShoesDelete] = useState(query)
 
     return (
         <div>
@@ -48,7 +46,7 @@ const Read = () => {
 
                     {
 
-                       query?.map( query => <ReadDetails query={query} ></ReadDetails> )
+                       query?.map( query => <ReadDetails query={query} shoesDelete={shoesDelete} setShoesDelete={setShoesDelete} ></ReadDetails> )
 
                     }
 
