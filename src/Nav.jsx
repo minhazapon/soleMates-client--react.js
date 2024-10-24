@@ -79,8 +79,8 @@ const Nav = () => {
     </div>
     <div className=' flex items-center gap-2'>
 
-       <img className=' h-[100px] ' src='https://cdn-icons-png.flaticon.com/128/4205/4205459.png' alt="" />
-       <a className=" font-serif  text-3xl">SoleMates</a>
+       <img className=' h-[80px] ' src='https://cdn-icons-png.flaticon.com/128/4205/4205459.png' alt="" />
+       <a className=" font-serif  text-2xl">SoleMates</a>
 
     </div>
     
@@ -121,7 +121,7 @@ const Nav = () => {
   </>:
 
 <Link to='/login' >
-<a className="btn font-serif bg-white ">Run  
+<a className="btn font-mono bg-white ">login
 <img className=' h-[30px] ' src="https://cdn-icons-gif.flaticon.com/10827/10827027.gif" alt="" />
 </a>
 </Link>

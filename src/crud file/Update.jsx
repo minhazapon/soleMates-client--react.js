@@ -67,14 +67,17 @@ const Update = () => {
               <div className="hero-overlay bg-opacity-60"></div>
               <div className="hero-content text-neutral-content text-center">
                 <div className="max-w-md">
-                  <h1 className="mb-5 text-8xl font-serif font-bold">Update Products</h1>
+                  <h1 className="mb-5 text-6xl text-white font-serif font-bold">Update Products</h1>
                 </div>
               </div>
             </div>
                
                {/* ///////////////////////////////////////////////////////////////// */}
+            
+        <div className=" mt-10 ml-10 mr-10 mb-10 ">
 
-            <section class="bg-black dark:bg-gray-900 mt-10 border-[1px] border-[#00CCDD] rounded-xl ">
+          
+        <section class="bg-black dark:bg-gray-900 mt-10 border-[1px] border-[#00CCDD] rounded-xl ">
   <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
       <h2 class="mb-4 text-xl font-bold text-[#00CCDD] dark:text-white  ">Update Products</h2>
       <form onSubmit={handleUp} >
@@ -116,6 +119,13 @@ const Update = () => {
       </form>
   </div>
 </section>
+          
+          
+          
+          
+        </div>    
+
+
     
 </div>
             
