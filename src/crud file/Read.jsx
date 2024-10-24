@@ -9,7 +9,7 @@ const Read = () => {
      const { data: query } = useQuery({
           queryKey: ['query'],
           queryFn: async () =>{
-              const res = await fetch('http://localhost:5000/addData')
+              const res = await fetch('https://solemates-server-nodejs-1.onrender.com/addData')
               return res.json()
           }
      })

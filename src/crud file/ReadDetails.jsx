@@ -24,7 +24,7 @@ const ReadDetails = ({query, shoesDelete, setShoesDelete}) => {
           }).then((result) => {
             if (result.isConfirmed) {
            
-            fetch(`http://localhost:5000/addData/${_id}`,{
+            fetch(`https://solemates-server-nodejs-1.onrender.com/addData/${_id}`,{
 
                 method: 'DELETE',
 

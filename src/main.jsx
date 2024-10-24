@@ -74,7 +74,7 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element:   <PrivateRoute><Update></Update></PrivateRoute> ,
-        loader: ({params}) => fetch(`http://localhost:5000/addData/${params.id}`)
+        loader: ({params}) => fetch(`https://solemates-server-nodejs-1.onrender.com/addData/${params.id}`)
       },
     ],
   },

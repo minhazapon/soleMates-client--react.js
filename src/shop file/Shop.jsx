@@ -14,7 +14,7 @@ const Shop = () => {
 
 
     useEffect( () =>{     
-        fetch('http://localhost:5000/shopData')
+        fetch('https://solemates-server-nodejs-1.onrender.com/shopData')
         .then( res => res.json())
         .then( data => setShop(data) )
     } , [])

@@ -13,7 +13,7 @@ const Showall = () => {
        queryKey: ['query'],
        queryFn: async () =>{
 
-           const res = await fetch('http://localhost:5000/featuredData')
+           const res = await fetch('https://solemates-server-nodejs-1.onrender.com/featuredData')
            return res.json()
 
        }

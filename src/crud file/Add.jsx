@@ -18,7 +18,7 @@ const Add = () => {
       const addUser = { name, brand, price, category, photourl, description }
       console.log(addUser)
 
-      fetch('http://localhost:5000/addData', {
+      fetch('https://solemates-server-nodejs-1.onrender.com/addData', {
        
         method: 'POST',
         headers:{

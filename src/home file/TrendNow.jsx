@@ -11,7 +11,7 @@ const TrendNow = () => {
 
     useEffect( () =>{
 
-        fetch('http://localhost:5000/trendingData')
+        fetch('https://solemates-server-nodejs-1.onrender.com/trendingData')
         .then( res => res.json())
         .then( data => setTrend(data) )
 
